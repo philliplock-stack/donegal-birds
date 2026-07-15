@@ -133,7 +133,7 @@ function playBirdCall(birdId) {
 
 // 4. REGISTER THE SERVICE WORKER (Makes it run offline like an installed app)
 if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.register('/sw.js')
+  navigator.serviceWorker.register('./sw.js')
     .then(() => console.log("Service Worker Registered"))
     .catch(err => console.log("Service Worker Failed", err));
 }
