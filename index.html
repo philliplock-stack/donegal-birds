@@ -9,22 +9,30 @@
 </head>
 <body>
 
-  <!-- This container handles the moving background -->
-  <div class="hero-background">
+  <!-- Full screen video background container -->
+  <div class="hero-video-container">
+    <video autoplay muted loop playsinline class="bg-video">
+      <source src="assets/waw-bg.mp4" type="video/mp4">
+    </video>
     
-    <header class="home-header">
-      <h1>Discover Donegal</h1>
-      <p>Explore the Wild Atlantic Way</p>
-    </header>
+    <!-- Dark tinted overlay so the white text stands out cleanly -->
+    <div class="video-overlay"></div>
 
-    <main class="home-container">
-      <div class="welcome-box">
-        <h2>Welcome to the Wilds</h2>
-        <p>Explore and identify the unique bird calls found along the cliffs, bogs, and glens of County Donegal.</p>
-        <a href="birds.html" class="start-btn">Listen to Bird Calls</a>
-      </div>
-    </main>
+    <!-- Your App Content sits perfectly on top -->
+    <div class="hero-content">
+      <header class="home-header">
+        <h1>Discover Donegal</h1>
+        <p>Explore the Wild Atlantic Way</p>
+      </header>
 
+      <main class="home-container">
+        <div class="welcome-box">
+          <h2>Welcome to the Wilds</h2>
+          <p>Explore and identify the unique bird calls found along the cliffs, bogs, and glens of County Donegal.</p>
+          <a href="birds.html" class="start-btn">Listen to Bird Calls</a>
+        </div>
+      </main>
+    </div>
   </div>
 
   <script src="app.js"></script>
