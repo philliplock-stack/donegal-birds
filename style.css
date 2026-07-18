@@ -1,98 +1,176 @@
 /* ==========================================================================
-   1. GLOBAL THEME, TYPOGRAPHY & CORE FONTS
+   1. GLOBAL THEME, TYPOGRAPHY & FONTS
    ========================================================================== */
-
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap');
 
-/* Unified baseline for all layouts */
 body {
   margin: 0;
   padding: 0;
   min-height: 100vh;
-  /* UNIFIED FONT: Matching the premium Montserrat styling throughout the entire site */
   font-family: 'Montserrat', sans-serif;
   box-sizing: border-box;
   -webkit-font-smoothing: antialiased;
 }
 
-/* 🏠 HOMEPAGE BACKGROUND: Uses donegal2.jpg with a cinematic dark tint overlay for high text contrast */
 body.home-page {
-  background: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.65)), url('./assets/donegal2.jpg') !important;
-  background-size: cover !important;
-  background-position: center !important;
-  background-attachment: fixed !important;
-  background-repeat: no-repeat !important;
+  background: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.65)), url('./assets/donegal2.jpg') no-repeat center center fixed;
+  background-size: cover;
 }
 
-/* 🐦 SUB-PAGES BACKGROUND (Birds & Gallery): Keeps donegal1.jpg bright and vibrant */
 body.sub-page {
-  background-image: url('./assets/donegal1.jpg') !important;
-  background-size: cover !important;
-  background-position: center !important;
-  background-attachment: fixed !important;
-  background-repeat: no-repeat !important;
-  background-color: #005c3e !important; /* Donegal Green backup while loading */
+  background: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url('./assets/donegal1.jpg') no-repeat center center fixed;
+  background-size: cover;
+  background-color: #005c3e;
 }
 
-/* Clean layout overlays */
 #grid, .bird-grid {
   background: transparent !important;
 }
 
 /* ==========================================================================
-   2. UNIFIED HEADERS & BRAND SIGNATURES
+   2. HEADERS & BANNERS (MOBILE UNIVERSE DEFAULT)
    ========================================================================== */
-
-/* Core sub-page header */
 header {
-  background-color: #005c3e; /* Donegal Green Anchor */
+  background-color: #005c3e;
   color: white;
   text-align: center;
   padding: 20px 10px;
   box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-  border-bottom: 4px solid #ffcc00; /* Donegal Gold Border */
+  border-bottom: 4px solid #ffcc00;
 }
 
 header h1 {
   font-weight: 700;
   margin: 0;
-  font-size: 2rem;
-  letter-spacing: -0.5px;
+  font-size: 1.8rem;
 }
 
 header p {
   margin: 6px 0 0 0;
-  font-size: 1rem;
-  font-family: 'Open Sans', sans-serif; /* Soft, clean secondary font for legibility */
-  color: #ffcc00; /* Matches the Donegal Gold accent */
+  font-size: 0.95rem;
+  font-family: 'Open Sans', sans-serif;
+  color: #ffcc00;
   font-weight: 600;
 }
 
-/* Homepage Header Overrides (For transparent video/image backdrop) */
+/* Homepage Header Grid Block (Mobile Default: Centered and Stacked) */
 .home-header {
-  background: transparent !important;
-  border-bottom: none !important;
-  box-shadow: none !important;
-  padding: 30px 10px 10px 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   text-align: center;
   width: 100%;
+  padding: 20px 0;
 }
 
 .home-header h1 {
-  color: #ffffff !important;
-  text-shadow: 0 4px 10px rgba(0,0,0,0.8) !important;
+  color: #ffffff;
+  text-shadow: 0 4px 10px rgba(0,0,0,0.8);
   font-size: 2.2rem;
+  margin: 10px 0 4px 0;
 }
 
 .home-header p {
-  color: #ffcc00 !important; /* Donegal Gold */
+  color: #ffcc00;
   text-shadow: 0 2px 4px rgba(0,0,0,0.6);
   font-size: 1.1rem;
+  margin: 0;
 }
 
 /* ==========================================================================
-   3. CARD & CONTENT MODULES (Mobile Optimized Grid)
+   3. LOGO CONFIGURATIONS
    ========================================================================== */
+.app-logo {
+  display: block;
+  object-fit: contain;
+}
+
+/* Homepage Mobile Logo Limit */
+.home-logo {
+  width: 25vw;
+  max-width: 100px;
+  height: auto;
+  margin: 0 auto;
+  filter: drop-shadow(0px 4px 8px rgba(0,0,0,0.3));
+}
+
+/* Birds Header Mobile Logo Limit */
+.header-logo {
+  width: 15vw;
+  max-width: 55px;
+  height: auto;
+  margin: 0 auto 10px auto;
+}
+
+.header-text-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+/* ==========================================================================
+   4. NAVIGATION, CONTAINERS & CARDS
+   ========================================================================== */
+.hero-content {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  box-sizing: border-box;
+  padding: 20px;
+}
+
+.home-container {
+  width: 100%;
+  max-width: 480px;
+}
+
+.welcome-box {
+  background-color: rgba(255, 255, 255, 0.96);
+  padding: 30px 20px;
+  border-radius: 20px;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+.welcome-box h2 {
+  color: #005c3e;
+  margin: 0 0 12px 0;
+  font-size: 1.4rem;
+}
+
+.welcome-box p {
+  line-height: 1.6;
+  color: #4a5568;
+  margin: 0 0 24px 0;
+  font-size: 0.95rem;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.button-stack {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.start-btn {
+  display: inline-block;
+  width: 80%;
+  max-width: 260px;
+  background-color: #ffcc00;
+  color: #00422c;
+  font-weight: 700;
+  text-decoration: none;
+  padding: 14px 20px;
+  border-radius: 30px;
+  box-shadow: 0 4px 12px rgba(255, 204, 0, 0.4);
+  text-align: center;
+}
 
 .bird-grid {
   display: grid;
@@ -104,234 +182,54 @@ header p {
 }
 
 .bird-card {
-  background-color: rgba(255, 255, 255, 0.96) !important; 
+  background-color: rgba(255, 255, 255, 0.96);
   border-radius: 12px;
   overflow: hidden;
-  box-shadow: 0 6px 15px rgba(0,0,0,0.18) !important; 
+  box-shadow: 0 6px 15px rgba(0,0,0,0.18);
   text-align: center;
   padding-bottom: 12px;
-  border: 3px solid transparent; /* Smooth border transition placeholder */
-  transition: transform 0.2s, border-color 0.2s;
+  border: 3px solid transparent;
+  transition: transform 0.2s;
   cursor: pointer;
 }
 
-.bird-card:active {
-  transform: scale(0.95);
-}
-
-/* Playing Highlight: Transitions card border straight into Donegal Gold */
-.bird-card.playing {
-  border-color: #ffcc00 !important; 
-  background-color: #f0fff4 !important;
-}
-
-.bird-card img {
-  width: 100%;
-  height: 120px;
-  object-fit: cover;
-}
-
-.bird-card h3 {
-  margin: 12px 0 2px 0;
-  font-size: 1rem;
-  color: #005c3e; /* Standardized card headers to Donegal Green */
-  font-weight: 700;
-}
-
-.photo-credit {
-  font-size: 0.75rem;
-  color: #718096;
-  margin: 4px 0 0 0;
-  font-family: 'Open Sans', sans-serif;
-}
+.bird-card img { width: 100%; height: 120px; object-fit: cover; }
+.bird-card h3 { margin: 12px 0 2px 0; font-size: 1rem; color: #005c3e; }
+.photo-credit { font-size: 0.75rem; color: #718096; font-family: 'Open Sans', sans-serif; }
+.back-navigation { width: 100%; display: flex; justify-content: center; padding: 15px 0; }
+.back-btn { display: inline-block; color: #ffffff; background-color: #005c3e; border: 2px solid #ffcc00; text-decoration: none; font-weight: 700; padding: 8px 20px; border-radius: 20px; }
 
 /* ==========================================================================
-   4. NAVIGATION BUTTONS & WELCOME MODULES
+   5. DESKTOP ADAPTABILITY RESPONSIVE CONTROLS (Wider Screens Only)
    ========================================================================== */
-
-.home-container {
-  width: 100%;
-  max-width: 500px;
-  box-sizing: border-box;
-  margin-bottom: 40px;
-}
-
-.welcome-box {
-  background-color: rgba(255, 255, 255, 0.96);
-  padding: 30px 20px;
-  border-radius: 20px;
-  text-align: center;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-}
-
-.welcome-box h2 {
-  color: #005c3e; /* Donegal Green */
-  margin: 0 0 12px 0;
-  font-size: 1.4rem;
-  font-weight: 700;
-}
-
-.welcome-box p {
-  line-height: 1.6;
-  color: #4a5568;
-  margin: 0 0 24px 0;
-  font-size: 0.95rem;
-  font-family: 'Open Sans', sans-serif;
-}
-
-/* Stacked Link Action Controls */
-.button-stack {
-  display: flex;
-  flex-direction: column;
-  gap: 14px;
-  align-items: center;
-}
-
-/* Primary Action Link (Donegal Gold) */
-.start-btn {
-  display: inline-block;
-  width: 80%;
-  max-width: 280px;
-  background-color: #ffcc00; /* Donegal Gold */
-  color: #00422c; /* Deep Contrast Green Text */
-  font-weight: 700;
-  text-decoration: none;
-  padding: 14px 20px;
-  border-radius: 30px;
-  box-shadow: 0 4px 12px rgba(255, 204, 0, 0.4);
-  transition: transform 0.2s, box-shadow 0.2s;
-  text-align: center;
-}
-
-/* Secondary Action Link (Donegal Green) */
-.secondary-btn {
-  background-color: #005c3e !important; 
-  color: #ffffff !important;
-  box-shadow: 0 4px 12px rgba(0, 92, 62, 0.3) !important;
-}
-
-.start-btn:active {
-  transform: scale(0.96);
-}
-
-/* Back Navigation Element Row */
-.back-navigation {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  padding: 15px 0 5px 0;
-}
-
-.back-btn {
-  display: inline-block;
-  color: #ffffff; 
-  background-color: #005c3e; /* Green Pill Badge for Sub-page consistency */
-  border: 2px solid #ffcc00;  /* Tied with Gold Border trim */
-  text-decoration: none;
-  font-weight: 700;
-  font-size: 0.9rem;
-  padding: 8px 20px;
-  border-radius: 20px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
-  transition: transform 0.2s;
-}
-
-.back-btn:active {
-  transform: scale(0.95);
-}
-
-/* ==========================================================================
-   5. SCREEN ADAPTABILITY (Desktop Responsive Optimization)
-   ========================================================================== */
-
-.hero-content {
-  position: relative;
-  z-index: 2;
-  width: 100%;
-  min-height: 100dvh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-  box-sizing: border-box;
-  padding: 20px;
-}
-
-/* 🖥️ DESKTOP ONLY LAYOUT (Screens wider than 768px) */
 @media (min-width: 768px) {
   .hero-content {
-    flex-direction: row !important;
-    justify-content: space-around !important;
-    padding: 60px;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    padding: 40px;
   }
 
   .home-header {
-    display: flex !important;
-    flex-direction: row !important; /* Side-by-side ONLY on desktop */
-    align-items: center !important;
+    flex-direction: row;
+    align-items: center;
+    text-align: left;
+    width: 50%;
     gap: 25px;
-    text-align: left !important;
-    width: 55% !important;
   }
 
   .home-header .home-logo {
-    margin: 0 !important;
-    width: 12vw !important;
-    max-width: 140px !important;
-    min-width: 90px !important;
-    height: auto !important;
+    margin: 0;
+    width: 110px;
   }
 
   .header-text-group {
-    align-items: flex-start !important;
-    text-align: left !important;
+    align-items: flex-start;
+    text-align: left;
   }
 
   .home-container {
-    width: 40% !important;
-    max-width: 450px !important;
-    margin-bottom: 0 !important;
+    width: 40%;
+    margin-bottom: 0;
   }
-}
-
-/* ==========================================================================
-   6. LOGO EMBED STYLES (Universal & Mobile Defaults)
-   ========================================================================== */
-
-/* 📱 MOBILE DEFAULT HEADER LOOK (Stacked vertically) */
-.home-header {
-  display: flex !important;
-  flex-direction: column !important; /* FORCES stacking on mobile layout */
-  align-items: center !important;
-  text-align: center !important;
-  width: 100% !important;
-}
-
-.app-logo {
-  display: block !important;
-  object-fit: contain !important;
-  margin: 0 auto 10px auto !important;
-}
-
-.home-logo {
-  width: 28% !important;
-  max-width: 105px !important;
-  height: auto !important;
-  filter: drop-shadow(0px 4px 8px rgba(0,0,0,0.3));
-}
-
-.header-logo {
-  width: 20% !important;
-  max-width: 60px !important;
-  height: auto !important;
-  margin-bottom: 6px;
-}
-
-.header-text-group {
-  display: flex !important;
-  flex-direction: column !important;
-  align-items: center !important; /* Perfectly centered text alignment on mobile */
-  text-align: center !important;
-  width: 100% !important;
 }
