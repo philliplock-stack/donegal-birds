@@ -9,14 +9,10 @@
 </head>
 <body class="home-page">
 
-  <!-- Main layout container that keeps text and boxes beautifully centered on screen -->
   <main class="hero-content">
     
-   <header class="home-header">
-      <!-- Your Logo -->
-    <img src="./assets/logo.png" alt="Donegal Explorer Logo" class="app-logo home-logo">
-     
-      <!-- NEW: This div forces the text elements to group and stack on separate lines -->
+    <header class="home-header">
+      <img src="./assets/logo.png" alt="Donegal Explorer Logo" class="app-logo home-logo">
       <div class="header-text-group">
         <h1>Donegal Explorer</h1>
         <p>Discover the Sights & Sounds of the Wilds</p>
@@ -27,18 +23,15 @@
       <div class="welcome-box">
         <h2>Welcome to the Wilds</h2>
         <p>Explore the unique sights and sounds along the cliffs, bogs, and glens of County Donegal.</p>
-        
-        <!-- Stacked Buttons Container -->
         <div class="button-stack">
           <a href="birds.html" class="start-btn">Listen to Bird Calls</a>
-        </div> <!-- FIXED: Added missing closing button-stack div -->
-      </div> <!-- FIXED: Added missing closing welcome-box div -->
+        </div>
+      </div>
     </div>
 
   </main>
 
   <script>
-    // Register Service Worker for offline support
     if ('serviceWorker' in navigator) {
       navigator.serviceWorker.register('./sw.js')
         .then(() => console.log("Service Worker Registered"))
