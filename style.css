@@ -53,14 +53,18 @@ header p {
   font-weight: 600;
 }
 
-/* Homepage Header Grid Block (Mobile Default: Centered and Stacked) */
+/* Homepage Header Grid Block (Mobile Default: Clean, Flat & Transparent) */
 .home-header {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  width: 100%;
-  padding: 20px 0;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  text-align: center !important;
+  background: transparent !important; /* Forces background to disappear */
+  border: none !important;             /* Strips any bounding boxes */
+  box-shadow: none !important;         /* Strips any drop shadow glow */
+  padding: 0 !important;               /* Strips the internal box footprint */
+  margin: 0 !important;                /* Keeps layout perfectly clean */
+  width: 100% !important;
 }
 
 .home-header h1 {
@@ -76,7 +80,6 @@ header p {
   font-size: 1.1rem;
   margin: 0;
 }
-
 /* ==========================================================================
    3. LOGO CONFIGURATIONS
    ========================================================================== */
