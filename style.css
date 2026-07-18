@@ -245,7 +245,6 @@ header p {
    5. SCREEN ADAPTABILITY (Desktop Responsive Optimization)
    ========================================================================== */
 
-/* Houses your homepage content over the photo background */
 .hero-content {
   position: relative;
   z-index: 2;
@@ -260,50 +259,66 @@ header p {
 }
 
 @media (min-width: 768px) {
-  /* Shifts the main sections to side-by-side layout on desktop */
   .hero-content {
     flex-direction: row !important;
     justify-content: space-around !important;
     padding: 60px;
   }
 
-  /* 🏠 DESKTOP HEADER LOOK: Aligns logo and text horizontally side-by-side */
   .home-header {
     display: flex !important;
     flex-direction: row !important;
     align-items: center !important;
-    gap: 25px; /* Spaces out the logo from the text titles */
+    gap: 25px;
     text-align: left !important;
-    width: 50% !important;
+    width: 55% !important;
   }
 
-  /* Adjusts the logo to stay centered with the side text */
+  /* 📐 AUTO-SIZING DESKTOP LOGO: Scales smoothly with screen size */
   .home-header .home-logo {
     margin: 0 !important;
-    height: 110px !important; /* Locks size perfectly to balance the text height */
+    width: 12vw !important; /* Scales fluidly with the browser window width */
+    max-width: 140px !important; /* Hard ceiling so it doesn't get massive on giant monitors */
+    min-width: 90px !important;  /* Floor limit so it stays readable on tablets */
+    height: auto !important;     /* Maintains perfect aspect ratio proportions */
   }
 
-  /* Grouping title and paragraph to stack vertically next to the logo */
-  .home-header h1 {
-    font-size: 3.2rem !important;
-    margin: 0 0 4px 0 !important;
-  }
-
-  .home-header p {
-    font-size: 1.2rem !important;
-    margin: 0 !important;
-  }
-
-  /* Homepage box container adjustments for desktop layout balance */
   .home-container {
     width: 40% !important;
     max-width: 450px !important;
     margin-bottom: 0 !important;
   }
 }
-/* Keeps the text block cleanly stacked vertically next to the horizontal logo */
+
+/* ==========================================================================
+   6. LOGO EMBED STYLES (Universal & Mobile Defaults)
+   ========================================================================== */
+
+.app-logo {
+  display: block;
+  object-fit: contain;
+  margin: 0 auto 10px auto;
+}
+
+/* 📐 AUTO-SIZING MOBILE HOMEPAGE LOGO */
+.home-logo {
+  width: 28vw; /* Takes up a perfectly balanced proportion of a phone screen */
+  max-width: 120px; 
+  height: auto; 
+  filter: drop-shadow(0px 4px 8px rgba(0,0,0,0.3));
+}
+
+/* 📐 AUTO-SIZING SUB-PAGE HEADER LOGO */
+.header-logo {
+  width: 15vw; /* Smaller scaling footprint inside the top sub-page banner */
+  max-width: 65px;
+  min-width: 45px;
+  height: auto;
+  margin-bottom: 6px;
+}
+
 .header-text-group {
   display: flex;
   flex-direction: column;
-  align-items: flex-start; /* Aligns both lines perfectly to the left edge */
+  align-items: flex-start;
 }
