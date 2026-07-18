@@ -300,20 +300,19 @@ header p {
   margin: 0 auto 10px auto;
 }
 
-/* 📐 AUTO-SIZING MOBILE HOMEPAGE LOGO */
+/* 📱 FIXED MOBILE HOMEPAGE LOGO: Kept perfectly compact on phones */
 .home-logo {
-  width: 28vw; /* Takes up a perfectly balanced proportion of a phone screen */
-  max-width: 120px; 
-  height: auto; 
+  width: 20% !important;     /* Restricts it to a neat fifth of the screen width */
+  max-width: 80px !important; /* Hard absolute limit so it never gets too big */
+  height: auto !important;    /* Keeps proportions perfectly constrained */
   filter: drop-shadow(0px 4px 8px rgba(0,0,0,0.3));
 }
 
-/* 📐 AUTO-SIZING SUB-PAGE HEADER LOGO */
+/* 📱 FIXED SUB-PAGE HEADER LOGO (Birds Page) */
 .header-logo {
-  width: 15vw; /* Smaller scaling footprint inside the top sub-page banner */
-  max-width: 65px;
-  min-width: 45px;
-  height: auto;
+  width: 15% !important;
+  max-width: 50px !important;
+  height: auto !important;
   margin-bottom: 6px;
 }
 
