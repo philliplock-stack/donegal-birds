@@ -4,14 +4,17 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans:wght@400;600&display=swap');
 
-/* Default background setup for the bird and sub-pages */
+/* Default base settings for all pages */
 body {
   margin: 0;
   padding: 0;
   min-height: 100vh;
   font-family: 'Open Sans', sans-serif;
-  
-  /* CRYSTAL CLEAR: Fully un-tinted rich photo background */
+  background-color: #f7fafc; /* Standard clean backup color */
+}
+
+/* TARGETS ONLY THE BIRD SUB-PAGE: Zero flashing on home page */
+body.sub-page {
   background-image: url('./assets/donegal1.jpg') !important;
   background-size: cover !important;
   background-position: center !important;
