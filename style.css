@@ -203,6 +203,211 @@ header p {
 .back-btn { display: inline-block; color: #ffffff; background-color: #005c3e; border: 2px solid #ffcc00; text-decoration: none; font-weight: 700; padding: 8px 20px; border-radius: 20px; }
 
 /* ==========================================================================
+   1. GLOBAL THEME, TYPOGRAPHY & FONTS
+   ========================================================================== */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap');
+
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  font-family: 'Montserrat', sans-serif;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+}
+
+body.home-page {
+  background: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.65)), url('./assets/donegal2.jpg') no-repeat center center fixed;
+  background-size: cover;
+}
+
+body.sub-page {
+  background: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url('./assets/donegal1.jpg') no-repeat center center fixed;
+  background-size: cover;
+  background-color: #005c3e;
+}
+
+#grid, .bird-grid {
+  background: transparent !important;
+}
+
+/* ==========================================================================
+   2. HEADERS & BANNERS (MOBILE UNIVERSE DEFAULT)
+   ========================================================================== */
+header {
+  background-color: #005c3e;
+  color: white;
+  text-align: center;
+  padding: 20px 10px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  border-bottom: 4px solid #ffcc00;
+}
+
+header h1 {
+  font-weight: 700;
+  margin: 0;
+  font-size: 1.8rem;
+}
+
+header p {
+  margin: 6px 0 0 0;
+  font-size: 0.95rem;
+  font-family: 'Open Sans', sans-serif;
+  color: #ffcc00;
+  font-weight: 600;
+}
+
+/* Homepage Header Grid Block (Mobile Default: Clean, Flat & Transparent) */
+.home-header {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  text-align: center !important;
+  background: transparent !important; /* Forces background to disappear */
+  border: none !important;              /* Strips any bounding boxes */
+  box-shadow: none !important;         /* Strips any drop shadow glow */
+  padding: 0 !important;               /* Strips the internal box footprint */
+  margin: 0 !important;                /* Keeps layout perfectly clean */
+  width: 100% !important;
+}
+
+.home-header h1 {
+  color: #ffffff;
+  text-shadow: 0 4px 10px rgba(0,0,0,0.8);
+  font-size: 2.2rem;
+  margin: 10px 0 4px 0;
+}
+
+.home-header p {
+  color: #ffcc00;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.6);
+  font-size: 1.1rem;
+  margin: 0;
+}
+
+/* ==========================================================================
+   3. LOGO CONFIGURATIONS
+   ========================================================================== */
+.app-logo {
+  display: block;
+  object-fit: contain;
+}
+
+/* Homepage Mobile Logo Limit */
+.home-logo {
+  width: 25vw;
+  max-width: 100px;
+  height: auto;
+  margin: 0 auto;
+  filter: drop-shadow(0px 4px 8px rgba(0,0,0,0.3));
+}
+
+/* Birds Header Mobile Logo Limit: Shifted with top spacing now that it is outside the banner */
+.header-logo {
+  width: 15vw;
+  max-width: 55px;
+  height: auto;
+  margin: 20px auto 10px auto !important; /* Adds breathing room above the green banner */
+}
+
+.header-text-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+/* ==========================================================================
+   4. NAVIGATION, CONTAINERS & CARDS
+   ========================================================================== */
+.hero-content {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  box-sizing: border-box;
+  padding: 20px;
+}
+
+.home-container {
+  width: 100%;
+  max-width: 480px;
+}
+
+.welcome-box {
+  background-color: rgba(255, 255, 255, 0.96);
+  padding: 30px 20px;
+  border-radius: 20px;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+.welcome-box h2 {
+  color: #005c3e;
+  margin: 0 0 12px 0;
+  font-size: 1.4rem;
+}
+
+.welcome-box p {
+  line-height: 1.6;
+  color: #4a5568;
+  margin: 0 0 24px 0;
+  font-size: 0.95rem;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.button-stack {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.start-btn {
+  display: inline-block;
+  width: 80%;
+  max-width: 260px;
+  background-color: #ffcc00;
+  color: #00422c;
+  font-weight: 700;
+  text-decoration: none;
+  padding: 14px 20px;
+  border-radius: 30px;
+  box-shadow: 0 4px 12px rgba(255, 204, 0, 0.4);
+  text-align: center;
+}
+
+.bird-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: 15px;
+  padding: 20px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.bird-card {
+  background-color: rgba(255, 255, 255, 0.96);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.18);
+  text-align: center;
+  padding-bottom: 12px;
+  border: 3px solid transparent;
+  transition: transform 0.2s;
+  cursor: pointer;
+}
+
+.bird-card img { width: 100%; height: 120px; object-fit: cover; }
+.bird-card h3 { margin: 12px 0 2px 0; font-size: 1rem; color: #005c3e; }
+.photo-credit { font-size: 0.75rem; color: #718096; font-family: 'Open Sans', sans-serif; }
+.back-navigation { width: 100%; display: flex; justify-content: center; padding: 15px 0; }
+.back-btn { display: inline-block; color: #ffffff; background-color: #005c3e; border: 2px solid #ffcc00; text-decoration: none; font-weight: 700; padding: 8px 20px; border-radius: 20px; }
+
+/* ==========================================================================
    5. DESKTOP ADAPTABILITY RESPONSIVE CONTROLS (Wider Screens Only)
    ========================================================================== */
 @media (min-width: 768px) {
