@@ -210,21 +210,26 @@ header p {
    5. DESKTOP ADAPTABILITY RESPONSIVE CONTROLS (Wider Screens Only - 768px+)
    ========================================================================== */
 @media (min-width: 768px) {
+  /* Center both blocks perfectly on the screen with dynamic spacing */
   .hero-content {
     flex-direction: row !important;
-    justify-content: space-around !important;
+    justify-content: space-evenly !important; /* Spreads layout evenly across screen */
     align-items: center !important;
+    max-width: 1200px !important;            /* Safe boundary so it doesn't overstretch on wide monitors */
+    margin: 0 auto !important;                /* Centers the entire content block */
     padding: 40px !important;
+    gap: 50px !important;                     /* Massive gap safety buffer between text and card */
   }
 
-  /* 🖥️ Side-by-side alignment strictly for desktop viewports */
+  /* 🖥️ Left Side Side-by-Side Logo & Text Block */
   .home-header {
     display: flex !important;
     flex-direction: row !important; 
     align-items: center !important;
     text-align: left !important;
-    width: 50% !important;
+    width: 50% !important;                    /* Claims half the desktop landscape width */
     gap: 25px !important;
+    margin: 0 !important;
   }
 
   .home-header .home-logo {
@@ -232,6 +237,7 @@ header p {
     width: 110px !important;
     max-width: 110px !important;
     height: auto !important;
+    flex-shrink: 0 !important;                /* Prevents logo from getting squished when window resizes */
   }
 
   /* Keeps text block stacked vertically on separate lines next to the logo */
@@ -243,8 +249,11 @@ header p {
     width: auto !important;
   }
 
+  /* 🖥️ Right Side Welcome Card Box Container */
   .home-container {
-    width: 40% !important;
+    width: 45% !important;                    /* Claims a matching chunk of screen space */
+    max-width: 450px !important;              /* Keeps the white card compact and modern */
     margin-bottom: 0 !important;
+    flex-shrink: 0 !important;
   }
 }
