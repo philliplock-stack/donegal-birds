@@ -2,6 +2,7 @@ const CACHE_NAME = 'donegal-birds-v1';
 const ASSETS = [
   '/',
   '/index.html',
+  '/birds.html',
   '/style.css',
   '/app.js',
   '/manifest.json',
