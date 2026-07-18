@@ -1,6 +1,6 @@
 {
-  "name": "Donegal Bird Calls",
-  "short_name": "Donegal Birds",
+  "name": "Donegal Explorer",
+  "short_name": "Donegal Explorer",
   "start_url": "./index.html",
   "display": "standalone",
   "background_color": "#f4f6f8",
