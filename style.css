@@ -1,16 +1,17 @@
 /* ==========================================================================
-   1. YOUR ORIGINAL APP STYLES (Grid, Cards, Header & Fonts)
+   1. GLOBAL APP BACKGROUNDS & SUB-PAGE SETUP
    ========================================================================== */
 
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans:wght@400;600&display=swap');
 
-body.sub-page, body {
+/* Default background setup for the bird and sub-pages */
+body {
   margin: 0;
   padding: 0;
   min-height: 100vh;
   font-family: 'Open Sans', sans-serif;
   
-  /* 1. REMOVED THE WHITE TINT: Your photo will now display at 100% full, rich color */
+  /* CRYSTAL CLEAR: Fully un-tinted rich photo background */
   background-image: url('./assets/donegal1.jpg') !important;
   background-size: cover !important;
   background-position: center !important;
@@ -19,16 +20,14 @@ body.sub-page, body {
   background-color: #005c3e !important; /* Donegal green backup while loading */
 }
 
-/* 2. ENSURE NOTHING ELSE IS WASHING IT OUT */
+/* Explicit layout container adjustments to ensure image visibility */
 #grid, .bird-grid {
   background: transparent !important;
 }
 
-/* 3. MAKE CARDS POP: Gives your white bird cards a clean shadow so they sit beautifully over the crisp photo */
-.bird-card {
-  background-color: rgba(255, 255, 255, 0.95) !important; /* Crisp white card background */
-  box-shadow: 0 6px 15px rgba(0,0,0,0.15) !important; /* Stronger shadow so text is easy to read over your image */
-}
+/* ==========================================================================
+   2. HEADER, GRID, AND INTERACTIVE BIRD CARDS
+   ========================================================================== */
 
 header {
   background-color: #005c3e; /* Donegal Green */
@@ -61,10 +60,10 @@ header p {
 }
 
 .bird-card {
-  background-color: white;
+  background-color: rgba(255, 255, 255, 0.96) !important; /* Semi-opaque clean card surface */
   border-radius: 12px;
   overflow: hidden;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.18) !important; /* Enhanced pop shadow over scenery */
   text-align: center;
   padding-bottom: 10px;
   border: 2px solid transparent;
@@ -101,14 +100,14 @@ header p {
 }
 
 /* ==========================================================================
-   2. REFINED HOMEPAGE VIDEO BACKGROUND STYLES (Mobile Optimized)
+   3. REFINED HOMEPAGE VIDEO BACKGROUND STYLES (Mobile Optimized)
    ========================================================================== */
 
 /* Container that locks everything into full-screen view safely */
 .hero-video-container {
   position: relative;
   width: 100%;
-  min-height: 100dvh; /* Uses 'dvh' (dynamic viewport height) so mobile address bars don't cut off content */
+  min-height: 100dvh; /* Dynamic viewport height against mobile browser bars */
   display: flex;
   flex-direction: column;
   overflow: hidden;
@@ -121,9 +120,9 @@ header p {
   left: 50%;
   width: 100%;
   height: 100%;
-  object-fit: cover; /* Guarantees the video stretches perfectly without squishing */
+  object-fit: cover;
   transform: translate(-50%, -50%);
-  z-index: 0; /* Keeps it strictly in the basement layer */
+  z-index: 0;
 }
 
 /* The cinematic tint overlay */
@@ -134,24 +133,24 @@ header p {
   width: 100%;
   height: 100%;
   background: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.65));
-  z-index: 1; /* Sits directly over the video, under the text */
+  z-index: 1;
 }
 
-/* Houses your content and forces it on top of the video/overlay */
+/* Houses your homepage content over the video background */
 .hero-content {
   position: relative;
-  z-index: 2; /* Explicitly brings text and boxes in front of everything */
+  z-index: 2;
   width: 100%;
   min-height: 100dvh;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-between; /* Perfect spacing: Header top, Box center/bottom */
+  justify-content: space-between;
   box-sizing: border-box;
   padding: 20px;
 }
 
-/* Transparency controls for the home header */
+/* Transparency controls for the home header specifically */
 .home-header {
   background: transparent !important;
   border-bottom: none !important;
@@ -175,16 +174,16 @@ header p {
   font-size: 1.1rem;
 }
 
-/* Clean, modern content container */
+/* Welcome block container layouts */
 .home-container {
   width: 100%;
   max-width: 500px;
   box-sizing: border-box;
-  margin-bottom: 40px; /* Leaves a comfortable gap at the bottom of the phone screen */
+  margin-bottom: 40px;
 }
 
 .welcome-box {
-  background-color: rgba(255, 255, 255, 0.96); /* Elegant, slightly translucent white */
+  background-color: rgba(255, 255, 255, 0.96);
   padding: 30px 20px;
   border-radius: 20px;
   text-align: center;
@@ -194,7 +193,7 @@ header p {
 
 .welcome-box h2 {
   font-family: 'Montserrat', sans-serif;
-  color: #005c3e; /* Donegal Green */
+  color: #005c3e;
   margin: 0 0 12px 0;
   font-size: 1.4rem;
 }
@@ -206,11 +205,11 @@ header p {
   font-size: 0.95rem;
 }
 
-/* Beautiful Donegal Gold Action Button */
+/* Donegal Gold Action Buttons */
 .start-btn {
   display: inline-block;
-  background-color: #ffcc00; /* Donegal Gold */
-  color: #00422c; /* Dark Green Text */
+  background-color: #ffcc00;
+  color: #00422c;
   font-family: 'Montserrat', sans-serif;
   font-weight: 700;
   text-decoration: none;
@@ -224,7 +223,10 @@ header p {
   transform: scale(0.96);
 }
 
-/* Container that centers the navigation row across the screen */
+/* ==========================================================================
+   4. NAVIGATION ELEMENTS
+   ========================================================================== */
+
 .back-navigation {
   width: 100%;
   display: flex;
@@ -232,10 +234,9 @@ header p {
   padding: 15px 0 5px 0;
 }
 
-/* Elegant, centered Back Button styling */
 .back-btn {
   display: inline-block;
-  color: #005c3e; /* Donegal Green */
+  color: #005c3e;
   text-decoration: none;
   font-family: 'Montserrat', sans-serif;
   font-weight: 700;
@@ -246,22 +247,5 @@ header p {
 }
 
 .back-btn:active {
-  background-color: rgba(0, 92, 62, 0.08); /* Soft feedback tap on mobile */
-}
-/* ==========================================================================
-   3. ISOLATE BIRD PAGE BACKGROUND FROM HOMEPAGE VIDEO
-   ========================================================================== */
-
-/* This targets ONLY the body if it's loading the birds or gallery sub-pages */
-body:not(:has(.hero-video-container)) {
-  background: linear-gradient(rgba(247, 250, 252, 0.88), rgba(247, 250, 252, 0.92)), url('assets/donegal1.jpg') !important;
-  background-size: cover !important;
-  background-position: center !important;
-  background-attachment: fixed !important;
-  background-repeat: no-repeat !important;
-}
-
-/* Fixes any potential hidden layout block coloring over your background image */
-#grid {
-  background: transparent !important;
+  background-color: rgba(0, 92, 62, 0.08);
 }
