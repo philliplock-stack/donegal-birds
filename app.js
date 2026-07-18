@@ -5,7 +5,7 @@ const birds = [
   {
     id: "chough",
     english: "Chough",
-    irish: "Cadhóg",
+    irish: "Cábóg",
     photo: "assets/chough.jpg",
     audio: "assets/chough.mp3",
     credit: "Andrew Kelly"
@@ -74,6 +74,15 @@ const birds = [
     audio: "assets/Red-Grouse.mp3",
     credit: "Gustavo Zoladz"
   }
+ {
+    id: "Sandwich-Tern",
+    english: "Sandwich Tern",
+    irish: "Geabhróg Scothdhubh",
+    photo: "assets/Sandwich-Tern.jpg",
+    audio: "assets/Sandwich-Tern.mp3",
+    credit: "Vũ Bụi"
+  }
+  
 ];
 
 // 2. AUTOMATICALLY BUILD THE GRID ON THE PAGE
